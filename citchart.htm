@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Star Citizen Navigation Charts Viewer</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	<script>
+	function load(req) {
+		var chartEmbed = document.getElementById("chartembed");
+		if(chartEmbed == null)
+		{
+			chartEmbed = document.createElement("embed");
+			chartEmbed.id = "chartembed";
+			chartEmbed.style.width = "auto";
+			chartEmbed.style.height = "100vh";
+			document.getElementById("chart").appendChild(chartEmbed);
+		}
+		chartEmbed.src = req;
+	};
+
+  	$(function() {
+        
+	  $('.list-group-item').on('click', function() {
+		$('.glyphicon', this)
+		  .toggleClass('glyphicon-chevron-right')
+		  .toggleClass('glyphicon-chevron-down');
+	  });
+
+	});
+
+
+	</script>
+	<style type="text/css">
+
+		body {
+			background-color: #EEEEEE;
+		}
+
+		#chart {
+			position: sticky;
+			top: 0;
+		}
+
+		.chart-item {
+			background-color: #F4F4FF;
+		}
+
+		.just-padding {
+			padding: 15px;
+		}
+
+		.list-group.list-group-root {
+			padding: 0;
+			overflow: hidden;
+		}
+
+		.list-group.list-group-root .list-group {
+			margin-bottom: 0;
+		}
+
+		.list-group.list-group-root .list-group-item {
+			border-radius: 0;
+			border-width: 1px 0 0 0;
+		}
+
+		.list-group.list-group-root > .list-group-item:first-child {
+			border-top-width: 0;
+		}
+
+		.list-group.list-group-root > .list-group > .list-group-item {
+			padding-left: 30px;
+		}
+
+		.list-group.list-group-root > .list-group > .list-group > .list-group-item {
+			padding-left: 50px;
+		}
+
+		.list-group.list-group-root > .list-group > .list-group > .list-group > .list-group-item {
+			padding-left: 70px;
+		}
+
+		.list-group.list-group-root > .list-group > .list-group > .list-group > .list-group > .list-group-item {
+			padding-left: 90px;
+		}
+
+		.list-group-item .glyphicon {
+			margin-right: 5px;
+		}
+	</style>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div style="width: 100%; max-width: 100%;" class="container p-3">
+	<div class="row">
+		<div class="col-sm-6 text-center" id="chart"></div>
+		<div class="col-sm-6">
+			<small>This list was last updated November 11, 2023. <a href="https://github.com/Rushyo/citchart-public">App by Rushyo</a>. Charts (not included) by <a href="https://www.deltaconsultingsc.com/">Delta Consulting Aviation Products</a>.</small>
+			<div class="list-group list-group-root well">
+				<a href="#favs" class="list-group-item" data-toggle="collapse">
+    <i class="glyphicon glyphicon-chevron-right"></i>Favourites
+  </a>
+<div class="list-group collapse" id="favs">
+<a href="#" onclick="load('./data/2-Stanton%20SFD/6-Microtech/Microtech/Port%20Tressler.jpg');" class="list-group-item">Port Tressler SFD</a>
+<a href="#" onclick="load('./data/2-Stanton%20SFD/6-Microtech/Microtech/New%20Babbage%20P1.jpg');" class="list-group-item">NBIS SFD</a>
+<a href="#" onclick="load('./data/4-Stanton%20Terminal%20Area%20Chart%20Supplement/5-TAC%20New%20Babbage%20P1.jpg');" class="list-group-item">NBIS TAC P1</a>
+<a href="#" onclick="load('./data/4-Stanton%20Terminal%20Area%20Chart%20Supplement/6-TAC%20New%20Babbage%20P2.jpg');" class="list-group-item">NBIS TAC P2</a>
+<a href="#" onclick="load('./data/2-Stanton%20SFD/3-Crusader/Crusader/Orison%20P1.jpg');" class="list-group-item">Orison SFD P1</a>
+<a href="#" onclick="load('./data/5-Stanton%20Instrument%20Approach%20Procedure%20Supplement/IAP%20Crusader_Orison%20QBA%20Z.jpg');" class="list-group-item">Orison QBA Z</a>
+</div>
+<a href="#stanton" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">☼ Stanton</span>
+  </a>
+<div class="list-group collapse" id="stanton">
+<a href="#arccorp" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🌐 ArcCorp</span>
+  </a>
+<div class="list-group collapse" id="arccorp">
+<a href="#baijini_point" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Baijini Point</span>
+  </a>
+<div class="list-group collapse" id="baijini_point">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/ArcCorp/Baijini Point.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#riker_memorial_spaceport" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Riker Memorial Spaceport</span>
+  </a>
+<div class="list-group collapse" id="riker_memorial_spaceport">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/ArcCorp/Riker Memorial Spaceport P1.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory P1 📰</a><a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/ArcCorp/Riker Memorial Spaceport P2.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory P2 📰</a></div>
+<a href="#lyria" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🌐 Lyria</span>
+  </a>
+<div class="list-group collapse" id="lyria">
+<a href="#humboldt_mines" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Humboldt Mines</span>
+  </a>
+<div class="list-group collapse" id="humboldt_mines">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Lyria/Humboldt Mines.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Lyria_Humboldt Mines_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#loveridge_mineral_reserve" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Loveridge Mineral Reserve</span>
+  </a>
+<div class="list-group collapse" id="loveridge_mineral_reserve">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Lyria/Loveridge Mineral Reserve.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Lyria_Loveridge Mineral Reserve_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#operations_depot_lyria" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Operations Depot Lyria</span>
+  </a>
+<div class="list-group collapse" id="operations_depot_lyria">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Lyria/Operations Depot Lyria.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#shubin_mining_facility_sal2" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Shubin Mining Facility SAL2</span>
+  </a>
+<div class="list-group collapse" id="shubin_mining_facility_sal2">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Lyria/Shubin Mining Facility SAL2.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Lyria_Shubin Mining Facility SAL2_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Lyria_Shubin Mining Facility SAL2_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Lyria_Shubin Mining Facility SAL2_QBA-B.jpg');" class="list-group-item chart-item">Instrument Approach QBA-B 📰</a></div>
+<a href="#shubin_mining_facility_sal5" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Shubin Mining Facility SAL5</span>
+  </a>
+<div class="list-group collapse" id="shubin_mining_facility_sal5">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Lyria/Shubin Mining Facility SAL5.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Lyria_Shubin Mining Facility SAL5_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Lyria_Shubin Mining Facility SAL5_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#shubin_processing_facility_spal12" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Shubin Processing Facility SPAL12</span>
+  </a>
+<div class="list-group collapse" id="shubin_processing_facility_spal12">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Lyria/Shubin Processing Facility SPAL12.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#shubin_processing_facility_spal16" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Shubin Processing Facility SPAL16</span>
+  </a>
+<div class="list-group collapse" id="shubin_processing_facility_spal16">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Lyria/Shubin Processing Facility SPAL16.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#shubin_processing_facility_spal21" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Shubin Processing Facility SPAL21</span>
+  </a>
+<div class="list-group collapse" id="shubin_processing_facility_spal21">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Lyria/Shubin Processing Facility SPAL21.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#shubin_processing_facility_spal3" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Shubin Processing Facility SPAL3</span>
+  </a>
+<div class="list-group collapse" id="shubin_processing_facility_spal3">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Lyria/Shubin Processing Facility SPAL3.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#shubin_processing_facility_spal7" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Shubin Processing Facility SPAL7</span>
+  </a>
+<div class="list-group collapse" id="shubin_processing_facility_spal7">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Lyria/Shubin Processing Facility SPAL7.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#shubin_processing_facility_spal9" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Shubin Processing Facility SPAL9</span>
+  </a>
+<div class="list-group collapse" id="shubin_processing_facility_spal9">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Lyria/Shubin Processing Facility SPAL9.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+</div>
+<a href="#wala" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🌐 Wala</span>
+  </a>
+<div class="list-group collapse" id="wala">
+<a href="#arccorp_mining_area_045" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 ArcCorp Mining Area 045</span>
+  </a>
+<div class="list-group collapse" id="arccorp_mining_area_045">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Wala/ArcCorp Mining Area 045.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Wala_ArcCorp Mining Area 045_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Wala_ArcCorp Mining Area 045_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#arccorp_mining_area_048" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 ArcCorp Mining Area 048</span>
+  </a>
+<div class="list-group collapse" id="arccorp_mining_area_048">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Wala/ArcCorp Mining Area 048.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Wala_ArcCorp Mining Area 048_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Wala_ArcCorp Mining Area 048_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#arccorp_mining_area_056" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 ArcCorp Mining Area 056</span>
+  </a>
+<div class="list-group collapse" id="arccorp_mining_area_056">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Wala/ArcCorp Mining Area 056.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Wala_ArcCorp Mining Area 056_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Wala_ArcCorp Mining Area 056_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#arccorp_mining_area_061" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 ArcCorp Mining Area 061</span>
+  </a>
+<div class="list-group collapse" id="arccorp_mining_area_061">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Wala/ArcCorp Mining Area 061.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Wala_ArcCorp Mining Area 061_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Wala_ArcCorp Mining Area 061_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#arccorp_processing_center_115" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 ArcCorp Processing Center 115</span>
+  </a>
+<div class="list-group collapse" id="arccorp_processing_center_115">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Wala/ArcCorp Processing Center 115.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#arccorp_processing_center_123" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 ArcCorp Processing Center 123</span>
+  </a>
+<div class="list-group collapse" id="arccorp_processing_center_123">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Wala/ArcCorp Processing Center 123.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#shady_glen_farms" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Shady Glen Farms</span>
+  </a>
+<div class="list-group collapse" id="shady_glen_farms">
+<a href="#" onclick="load('./data/2-Stanton SFD/2-ArcCorp/Wala/Shady Glen Farms.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Wala_Shady Glen Farms_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+</div>
+<a href="#area_18" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Area 18</span>
+  </a>
+<div class="list-group collapse" id="area_18">
+<a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP ArcCorp_Area 18_QBA X.jpg');" class="list-group-item chart-item">Instrument Approach QBA X 📰</a><a href="#" onclick="load('./data/4-Stanton Terminal Area Chart Supplement/3-TAC Area 18.jpg');" class="list-group-item chart-item">Terminal Approach Chart  📰</a><a href="#" onclick="load('./data/3-Stanton No Fly Zone Supplement/2-NFZ Area 18.jpg');" class="list-group-item chart-item">No Fly Zone Supplement 📰</a></div>
+</div>
+<a href="#crusader" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🌐 Crusader</span>
+  </a>
+<div class="list-group collapse" id="crusader">
+<a href="#cellin" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🌐 Cellin</span>
+  </a>
+<div class="list-group collapse" id="cellin">
+<a href="#ashburn_channel_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Ashburn Channel Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="ashburn_channel_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Cellin/Ashburn Channel Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#flanagans_ravine_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Flanagan's Ravine Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="flanagans_ravine_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Cellin/Flanagan%27s Ravine Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#gallete_family_farms" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Gallete Family Farms</span>
+  </a>
+<div class="list-group collapse" id="gallete_family_farms">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Cellin/Gallete Family Farms.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Cellin_Gallete Family Farms_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#hickes_research_outpost" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Hickes Research Outpost</span>
+  </a>
+<div class="list-group collapse" id="hickes_research_outpost">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Cellin/Hickes Research Outpost.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Cellin_Hickes Research Outpost_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Cellin_Hickes Research Outpost_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#julep_ravine_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Julep Ravine Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="julep_ravine_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Cellin/Julep Ravine Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#mogote_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Mogote Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="mogote_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Cellin/Mogote Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#security_post_criska" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Security Post Criska</span>
+  </a>
+<div class="list-group collapse" id="security_post_criska">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Cellin/Security Post Criska.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#security_post_dipur" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Security Post Dipur</span>
+  </a>
+<div class="list-group collapse" id="security_post_dipur">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Cellin/Security Post Dipur.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#security_post_kareah" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Security Post Kareah</span>
+  </a>
+<div class="list-group collapse" id="security_post_kareah">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Cellin/Security Post Kareah.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#security_post_lespin" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Security Post Lespin</span>
+  </a>
+<div class="list-group collapse" id="security_post_lespin">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Cellin/Security Post Lespin.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#terra_mills_hydrofarm" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Terra Mills Hydrofarm</span>
+  </a>
+<div class="list-group collapse" id="terra_mills_hydrofarm">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Cellin/Terra Mills Hydrofarm.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Cellin_Terra Mills Hydrofarm_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Cellin_Terra Mills Hydrofarm_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#tram_and_myers_mining" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Tram and Myers Mining</span>
+  </a>
+<div class="list-group collapse" id="tram_and_myers_mining">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Cellin/Tram and Myers Mining.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Cellin_Tram and Myers Mining_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+</div>
+<a href="#orison" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Orison</span>
+  </a>
+<div class="list-group collapse" id="orison">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Crusader/Orison P1.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory P1 📰</a><a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Crusader/Orison P2.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory P2 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Crusader_Orison QBA Y.jpg');" class="list-group-item chart-item">Instrument Approach QBA Y 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Crusader_Orison QBA Z.jpg');" class="list-group-item chart-item">Instrument Approach QBA Z 📰</a><a href="#" onclick="load('./data/4-Stanton Terminal Area Chart Supplement/7-TAC Orison.jpg');" class="list-group-item chart-item">Terminal Approach Chart  📰</a><a href="#" onclick="load('./data/3-Stanton No Fly Zone Supplement/5-NFZ Orison.jpg');" class="list-group-item chart-item">No Fly Zone Supplement 📰</a></div>
+<a href="#seraphim_station" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Seraphim Station</span>
+  </a>
+<div class="list-group collapse" id="seraphim_station">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Crusader/Seraphim Station.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#daymar" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🌐 Daymar</span>
+  </a>
+<div class="list-group collapse" id="daymar">
+<a href="#arccorp_mining_area_141" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 ArcCorp Mining Area 141</span>
+  </a>
+<div class="list-group collapse" id="arccorp_mining_area_141">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Daymar/ArcCorp Mining Area 141.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Daymar_ArcCorp Mining Area 141_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Daymar_ArcCorp Mining Area 141_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#bountiful_harvest_hydroponics" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Bountiful Harvest Hydroponics</span>
+  </a>
+<div class="list-group collapse" id="bountiful_harvest_hydroponics">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Daymar/Bountiful Harvest Hydroponics.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Daymar_Bountiful Harvest Hydroponics_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#covalex_shipping_hub_gundo" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Covalex Shipping Hub Gundo</span>
+  </a>
+<div class="list-group collapse" id="covalex_shipping_hub_gundo">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Daymar/Covalex Shipping Hub Gundo.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#dunlow_ridge_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Dunlow Ridge Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="dunlow_ridge_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Daymar/Dunlow Ridge Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#eager_flats_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Eager Flats Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="eager_flats_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Daymar/Eager Flats Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#kudre_ore" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Kudre Ore</span>
+  </a>
+<div class="list-group collapse" id="kudre_ore">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Daymar/Kudre Ore.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Daymar_Kudre Ore_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#security_post_moluto" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Security Post Moluto</span>
+  </a>
+<div class="list-group collapse" id="security_post_moluto">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Daymar/Security Post Moluto.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#security_post_prashad" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Security Post Prashad</span>
+  </a>
+<div class="list-group collapse" id="security_post_prashad">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Daymar/Security Post Prashad.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#security_post_thaquray" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Security Post Thaquray</span>
+  </a>
+<div class="list-group collapse" id="security_post_thaquray">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Daymar/Security Post Thaquray.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#shubin_mining_facility_scd-1" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Shubin Mining Facility SCD-1</span>
+  </a>
+<div class="list-group collapse" id="shubin_mining_facility_scd-1">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Daymar/Shubin Mining Facility SCD-1.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Daymar_Shubin Mining Facility SCD-1_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Daymar_Shubin Mining Facility SCD-1_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#tamdon_plains_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Tamdon Plains Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="tamdon_plains_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Daymar/Tamdon Plains Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#wolf_point_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Wolf Point Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="wolf_point_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Daymar/Wolf Point Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+</div>
+<a href="#yela" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🌐 Yela</span>
+  </a>
+<div class="list-group collapse" id="yela">
+<a href="#arccorp_mining_area_157" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 ArcCorp Mining Area 157</span>
+  </a>
+<div class="list-group collapse" id="arccorp_mining_area_157">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Yela/ArcCorp Mining Area 157.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Yela_ArcCorp Mining Area 157_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Yela_ArcCorp Mining Area 157_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#aston_ridge_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Aston Ridge Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="aston_ridge_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Yela/Aston Ridge Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#benson_mining_outpost" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Benson Mining Outpost</span>
+  </a>
+<div class="list-group collapse" id="benson_mining_outpost">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Yela/Benson Mining Outpost.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Yela_Benson Mining Outpost_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#deakins_research_outpost" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Deakins Research Outpost</span>
+  </a>
+<div class="list-group collapse" id="deakins_research_outpost">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Yela/Deakins Research Outpost.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Yela_Deakins Research Outpost_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Yela_Deakins Research Outpost_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#grim_hex" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Grim Hex</span>
+  </a>
+<div class="list-group collapse" id="grim_hex">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Yela/Grim Hex P1.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory P1 📰</a><a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Yela/Grim Hex P2.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory P2 📰</a></div>
+<a href="#kosso_basin_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Kosso Basin Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="kosso_basin_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Yela/Kosso Basin Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#nakamura_valley_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Nakamura Valley Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="nakamura_valley_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Yela/Nakamura Valley Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#security_post_opal" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Security Post Opal</span>
+  </a>
+<div class="list-group collapse" id="security_post_opal">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Yela/Security Post Opal.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#security_post_wan" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Security Post Wan</span>
+  </a>
+<div class="list-group collapse" id="security_post_wan">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Yela/Security Post Wan.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#talarine_divide_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Talarine Divide Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="talarine_divide_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/3-Crusader/Yela/Talarine Divide Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+</div>
+</div>
+<a href="#hurston" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🌐 Hurston</span>
+  </a>
+<div class="list-group collapse" id="hurston">
+<a href="#aberdeen" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🌐 Aberdeen</span>
+  </a>
+<div class="list-group collapse" id="aberdeen">
+<a href="#barton_flats_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Barton Flats Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="barton_flats_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Aberdeen/Barton Flats Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#hdms_anderson" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 HDMS Anderson</span>
+  </a>
+<div class="list-group collapse" id="hdms_anderson">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Aberdeen/HDMS Anderson.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Aberdeen_HDMS Anderson_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Aberdeen_HDMS Anderson_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#hdms_norgaard" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 HDMS Norgaard</span>
+  </a>
+<div class="list-group collapse" id="hdms_norgaard">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Aberdeen/HDMS Norgaard.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Aberdeen_HDMS Norgaard_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Aberdeen_HDMS Norgaard_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#klescher_rehabilitation_facility" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Klescher Rehabilitation Facility</span>
+  </a>
+<div class="list-group collapse" id="klescher_rehabilitation_facility">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Aberdeen/Klescher Rehabilitation Facility.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+</div>
+<a href="#arial" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🌐 Arial</span>
+  </a>
+<div class="list-group collapse" id="arial">
+<a href="#hdms_bezdek" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 HDMS Bezdek</span>
+  </a>
+<div class="list-group collapse" id="hdms_bezdek">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Arial/HDMS Bezdek.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Arial_HDMS Bezdek_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Arial_HDMS Bezdek_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#hdms_lathan" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 HDMS Lathan</span>
+  </a>
+<div class="list-group collapse" id="hdms_lathan">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Arial/HDMS Lathan.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Arial_HDMS Lathan_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Arial_HDMS Lathan_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+</div>
+<a href="#everus_harbor" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Everus Harbor</span>
+  </a>
+<div class="list-group collapse" id="everus_harbor">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Hurston/Everus Harbor.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#hdms_edmond" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 HDMS Edmond</span>
+  </a>
+<div class="list-group collapse" id="hdms_edmond">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Hurston/HDMS Edmond.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Hurston_HDMS Edmond_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Hurston_HDMS Edmond_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#hdms_hadley" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 HDMS Hadley</span>
+  </a>
+<div class="list-group collapse" id="hdms_hadley">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Hurston/HDMS Hadley.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Hurston_HDMS Hadley_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Hurston_HDMS Hadley_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#hdms_oparei" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 HDMS Oparei</span>
+  </a>
+<div class="list-group collapse" id="hdms_oparei">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Hurston/HDMS Oparei.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Hurston_HDMS Oparei_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Hurston_HDMS Oparei_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#hdms_pinewood" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 HDMS Pinewood</span>
+  </a>
+<div class="list-group collapse" id="hdms_pinewood">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Hurston/HDMS Pinewood.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Hurston_HDMS Pinewood_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Hurston_HDMS Pinewood_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#hdms_stanhope" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 HDMS Stanhope</span>
+  </a>
+<div class="list-group collapse" id="hdms_stanhope">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Hurston/HDMS Stanhope.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Hurston_HDMS Stanhope_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Hurston_HDMS Stanhope_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#hdms_thedus" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 HDMS Thedus</span>
+  </a>
+<div class="list-group collapse" id="hdms_thedus">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Hurston/HDMS Thedus.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Hurston_HDMS Thedus_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Hurston_HDMS Thedus_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#teasa_spaceport" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Teasa Spaceport</span>
+  </a>
+<div class="list-group collapse" id="teasa_spaceport">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Hurston/Teasa Spaceport.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#ita" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🌐 Ita</span>
+  </a>
+<div class="list-group collapse" id="ita">
+<a href="#hdms_ryder" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 HDMS Ryder</span>
+  </a>
+<div class="list-group collapse" id="hdms_ryder">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Ita/HDMS Ryder.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Ita_HDMS Ryder_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Ita_HDMS Ryder_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#hdms_woodruff" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 HDMS Woodruff</span>
+  </a>
+<div class="list-group collapse" id="hdms_woodruff">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Ita/HDMS Woodruff.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Ita_HDMS Woodruff_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Ita_HDMS Woodruff_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+</div>
+<a href="#magda" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🌐 Magda</span>
+  </a>
+<div class="list-group collapse" id="magda">
+<a href="#hdms_hahn" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 HDMS Hahn</span>
+  </a>
+<div class="list-group collapse" id="hdms_hahn">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Magda/HDMS Hahn.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Magda_HDMS Hahn_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Magda_HDMS Hahn_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#hdms_perlman" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 HDMS Perlman</span>
+  </a>
+<div class="list-group collapse" id="hdms_perlman">
+<a href="#" onclick="load('./data/2-Stanton SFD/4-Hurston/Magda/HDMS Perlman.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Magda_HDMS Perlman_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Magda_HDMS Perlman_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+</div>
+<a href="#lorville" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Lorville</span>
+  </a>
+<div class="list-group collapse" id="lorville">
+<a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Hurston_Lorville QBA X.jpg');" class="list-group-item chart-item">Instrument Approach QBA X 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Hurston_Lorville QBA Y.jpg');" class="list-group-item chart-item">Instrument Approach QBA Y 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Hurston_Lorville QBA Z.jpg');" class="list-group-item chart-item">Instrument Approach QBA Z 📰</a><a href="#" onclick="load('./data/4-Stanton Terminal Area Chart Supplement/4-TAC Lorville.jpg');" class="list-group-item chart-item">Terminal Approach Chart  📰</a><a href="#" onclick="load('./data/3-Stanton No Fly Zone Supplement/3-NFZ Lorville.jpg');" class="list-group-item chart-item">No Fly Zone Supplement 📰</a></div>
+</div>
+<a href="#microtech" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🌐 Microtech</span>
+  </a>
+<div class="list-group collapse" id="microtech">
+<a href="#calliope" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🌐 Calliope</span>
+  </a>
+<div class="list-group collapse" id="calliope">
+<a href="#rayari_anvik_research_outpost" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Rayari Anvik Research Outpost</span>
+  </a>
+<div class="list-group collapse" id="rayari_anvik_research_outpost">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Calliope/Rayari Anvik Research Outpost.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Calliope_Rayari Anvik Research Outpost_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Calliope_Rayari Anvik Research Outpost_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#rayari_kaltag_research_outpost" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Rayari Kaltag Research Outpost</span>
+  </a>
+<div class="list-group collapse" id="rayari_kaltag_research_outpost">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Calliope/Rayari Kaltag Research Outpost.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Calliope_Rayari Kaltag Research Outpost_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Calliope_Rayari Kaltag Research Outpost_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#shubin_mining_facility_smca6" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Shubin Mining Facility SMCa6</span>
+  </a>
+<div class="list-group collapse" id="shubin_mining_facility_smca6">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Calliope/Shubin Mining Facility SMCa6.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Calliope_Shubin Mining Facility SMCa6_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Calliope_Shubin Mining Facility SMCa6_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#shubin_mining_facility_smca8" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Shubin Mining Facility SMCa8</span>
+  </a>
+<div class="list-group collapse" id="shubin_mining_facility_smca8">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Calliope/Shubin Mining Facility SMCa8.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Calliope_Shubin Mining Facility SMCa8_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Calliope_Shubin Mining Facility SMCa8_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#shubin_processing_facility_spmc-10" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Shubin Processing Facility SPMC-10</span>
+  </a>
+<div class="list-group collapse" id="shubin_processing_facility_spmc-10">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Calliope/Shubin Processing Facility SPMC-10.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#shubin_processing_facility_spmc-11" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Shubin Processing Facility SPMC-11</span>
+  </a>
+<div class="list-group collapse" id="shubin_processing_facility_spmc-11">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Calliope/Shubin Processing Facility SPMC-11.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#shubin_processing_facility_spmc-14" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Shubin Processing Facility SPMC-14</span>
+  </a>
+<div class="list-group collapse" id="shubin_processing_facility_spmc-14">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Calliope/Shubin Processing Facility SPMC-14.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#shubin_processing_facility_spmc-3" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Shubin Processing Facility SPMC-3</span>
+  </a>
+<div class="list-group collapse" id="shubin_processing_facility_spmc-3">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Calliope/Shubin Processing Facility SPMC-3.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#shubin_processing_facility_spmc-5" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Shubin Processing Facility SPMC-5</span>
+  </a>
+<div class="list-group collapse" id="shubin_processing_facility_spmc-5">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Calliope/Shubin Processing Facility SPMC-5.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+</div>
+<a href="#clio" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🌐 Clio</span>
+  </a>
+<div class="list-group collapse" id="clio">
+<a href="#rayari_cantwell_research_outpost" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Rayari Cantwell Research Outpost</span>
+  </a>
+<div class="list-group collapse" id="rayari_cantwell_research_outpost">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Clio/Rayari Cantwell Research Outpost.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Clio_Rayari Cantwell Research Outpost_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Clio_Rayari Cantwell Research Outpost_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#rayari_mcgrath_research_outpost" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Rayari McGrath Research Outpost</span>
+  </a>
+<div class="list-group collapse" id="rayari_mcgrath_research_outpost">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Clio/Rayari McGrath Research Outpost.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Clio_Rayari McGrath Research Outpost_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Clio_Rayari McGrath Research Outpost_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+</div>
+<a href="#euterpe" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🌐 Euterpe</span>
+  </a>
+<div class="list-group collapse" id="euterpe">
+<a href="#buds_growery" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Bud's Growery</span>
+  </a>
+<div class="list-group collapse" id="buds_growery">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Euterpe/Bud%27s Growery.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Euterpe_Bud%27s Growery_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+</div>
+<a href="#calhoun_pass_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Calhoun Pass Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="calhoun_pass_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Calhoun Pass Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#clear_view_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Clear View Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="clear_view_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Clear View Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#microtech_data_center_2ub-rb9-5" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Microtech Data Center 2UB-RB9-5</span>
+  </a>
+<div class="list-group collapse" id="microtech_data_center_2ub-rb9-5">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Microtech Data Center 2UB-RB9-5.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#microtech_data_center_4hj-lve-a" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Microtech Data Center 4HJ-LVE-A</span>
+  </a>
+<div class="list-group collapse" id="microtech_data_center_4hj-lve-a">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Microtech Data Center 4HJ-LVE-A.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#microtech_data_center_5wq-r2v-c" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Microtech Data Center 5WQ-R2V-C</span>
+  </a>
+<div class="list-group collapse" id="microtech_data_center_5wq-r2v-c">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Microtech Data Center 5WQ-R2V-C.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#microtech_data_center_8fk-q2x-k" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Microtech Data Center 8FK-Q2X-K</span>
+  </a>
+<div class="list-group collapse" id="microtech_data_center_8fk-q2x-k">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Microtech Data Center 8FK-Q2X-K.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#microtech_data_center_d79-ecg-r" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Microtech Data Center D79-ECG-R</span>
+  </a>
+<div class="list-group collapse" id="microtech_data_center_d79-ecg-r">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Microtech Data Center D79-ECG-R.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#microtech_data_center_e2q-nsg-y" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Microtech Data Center E2Q-NSG-Y</span>
+  </a>
+<div class="list-group collapse" id="microtech_data_center_e2q-nsg-y">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Microtech Data Center E2Q-NSG-Y.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#microtech_data_center_kh3-aae-l" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Microtech Data Center KH3-AAE-L</span>
+  </a>
+<div class="list-group collapse" id="microtech_data_center_kh3-aae-l">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Microtech Data Center KH3-AAE-L.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#microtech_data_center_l8p-juc-8" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Microtech Data Center L8P-JUC-8</span>
+  </a>
+<div class="list-group collapse" id="microtech_data_center_l8p-juc-8">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Microtech Data Center L8P-JUC-8.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#microtech_data_center_qvx-j88-j" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Microtech Data Center QVX-J88-J</span>
+  </a>
+<div class="list-group collapse" id="microtech_data_center_qvx-j88-j">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Microtech Data Center QVX-J88-J.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#microtech_data_center_tmg-xev-2" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Microtech Data Center TMG-XEV-2</span>
+  </a>
+<div class="list-group collapse" id="microtech_data_center_tmg-xev-2">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Microtech Data Center TMG-XEV-2.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#mt_opcenter_lti-4" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 MT OpCenter LTI-4</span>
+  </a>
+<div class="list-group collapse" id="mt_opcenter_lti-4">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/MT OpCenter LTI-4.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#new_babbage_commons" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 New Babbage Commons</span>
+  </a>
+<div class="list-group collapse" id="new_babbage_commons">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/New Babbage Commons.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#new_babbage" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 New Babbage</span>
+  </a>
+<div class="list-group collapse" id="new_babbage">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/New Babbage P1.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory P1 📰</a><a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/New Babbage P2.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory P2 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Microtech_New Babbage QBA X.jpg');" class="list-group-item chart-item">Instrument Approach QBA X 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Microtech_New Babbage QBA Y.jpg');" class="list-group-item chart-item">Instrument Approach QBA Y 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Microtech_New Babbage QBA Z.jpg');" class="list-group-item chart-item">Instrument Approach QBA Z 📰</a><a href="#" onclick="load('./data/4-Stanton Terminal Area Chart Supplement/5-TAC New Babbage P1.jpg');" class="list-group-item chart-item">Terminal Approach Chart  P1 📰</a><a href="#" onclick="load('./data/4-Stanton Terminal Area Chart Supplement/6-TAC New Babbage P2.jpg');" class="list-group-item chart-item">Terminal Approach Chart  P2 📰</a><a href="#" onclick="load('./data/3-Stanton No Fly Zone Supplement/4-NFZ New Babbage.jpg');" class="list-group-item chart-item">No Fly Zone Supplement 📰</a></div>
+<a href="#nuiqsut_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Nuiqsut Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="nuiqsut_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Nuiqsut Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#point_wain_aid_shelter" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Point Wain Aid Shelter</span>
+  </a>
+<div class="list-group collapse" id="point_wain_aid_shelter">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Point Wain Aid Shelter.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#port_tressler" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Port Tressler</span>
+  </a>
+<div class="list-group collapse" id="port_tressler">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Port Tressler.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#rayari_deltana_research_outpost" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Rayari Deltana Research Outpost</span>
+  </a>
+<div class="list-group collapse" id="rayari_deltana_research_outpost">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Rayari Deltana Research Outpost.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Microtech_Rayari Deltana Research Outpost_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Microtech_Rayari Deltana Research Outpost_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#shubin_mining_facility_smo10" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Shubin Mining Facility SMO10</span>
+  </a>
+<div class="list-group collapse" id="shubin_mining_facility_smo10">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Shubin Mining Facility SMO10.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#shubin_mining_facility_smo13" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Shubin Mining Facility SMO13</span>
+  </a>
+<div class="list-group collapse" id="shubin_mining_facility_smo13">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Shubin Mining Facility SMO13.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#shubin_mining_facility_smo18" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Shubin Mining Facility SMO18</span>
+  </a>
+<div class="list-group collapse" id="shubin_mining_facility_smo18">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Shubin Mining Facility SMO18.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#shubin_mining_facility_smo22" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Shubin Mining Facility SMO22</span>
+  </a>
+<div class="list-group collapse" id="shubin_mining_facility_smo22">
+<a href="#" onclick="load('./data/2-Stanton SFD/6-Microtech/Microtech/Shubin Mining Facility SMO22.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#shubin_mining_facility_smo-10" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Shubin Mining Facility SMO-10</span>
+  </a>
+<div class="list-group collapse" id="shubin_mining_facility_smo-10">
+<a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Microtech_Shubin Mining Facility SMO-10_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Microtech_Shubin Mining Facility SMO-10_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#shubin_mining_facility_smo-13" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Shubin Mining Facility SMO-13</span>
+  </a>
+<div class="list-group collapse" id="shubin_mining_facility_smo-13">
+<a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Microtech_Shubin Mining Facility SMO-13_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Microtech_Shubin Mining Facility SMO-13_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#shubin_mining_facility_smo-18" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Shubin Mining Facility SMO-18</span>
+  </a>
+<div class="list-group collapse" id="shubin_mining_facility_smo-18">
+<a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Microtech_Shubin Mining Facility SMO-18_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Microtech_Shubin Mining Facility SMO-18_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+<a href="#shubin_mining_facility_smo-22" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="font-weight: bold;">🏗 Shubin Mining Facility SMO-22</span>
+  </a>
+<div class="list-group collapse" id="shubin_mining_facility_smo-22">
+<a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Microtech_Shubin Mining Facility SMO-22_QBA A.jpg');" class="list-group-item chart-item">Instrument Approach QBA A 📰</a><a href="#" onclick="load('./data/5-Stanton Instrument Approach Procedure Supplement/IAP Microtech_Shubin Mining Facility SMO-22_QBA B.jpg');" class="list-group-item chart-item">Instrument Approach QBA B 📰</a></div>
+</div>
+<a href="#ins_jericho" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 INS Jericho</span>
+  </a>
+<div class="list-group collapse" id="ins_jericho">
+<a href="#" onclick="load('./data/2-Stanton SFD/7-Other Stations/INS Jericho.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#arcl1_wide_forest" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 ARCL1 Wide Forest</span>
+  </a>
+<div class="list-group collapse" id="arcl1_wide_forest">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/ARCL1 Wide Forest.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#arcl2_lively_pathway" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 ARCL2 Lively Pathway</span>
+  </a>
+<div class="list-group collapse" id="arcl2_lively_pathway">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/ARCL2 Lively Pathway.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#arcl3_modern_express" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 ARCL3 Modern Express</span>
+  </a>
+<div class="list-group collapse" id="arcl3_modern_express">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/ARCL3 Modern Express.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#arcl4_faint_glen" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 ARCL4 Faint Glen</span>
+  </a>
+<div class="list-group collapse" id="arcl4_faint_glen">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/ARCL4 Faint Glen.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#arcl5_yellow_core" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 ARCL5 Yellow Core</span>
+  </a>
+<div class="list-group collapse" id="arcl5_yellow_core">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/ARCL5 Yellow Core.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#crul1_ambitious_dream" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 CRUL1 Ambitious Dream</span>
+  </a>
+<div class="list-group collapse" id="crul1_ambitious_dream">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/CRUL1 Ambitious Dream.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#crul4_shallow_fields" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 CRUL4 Shallow Fields</span>
+  </a>
+<div class="list-group collapse" id="crul4_shallow_fields">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/CRUL4 Shallow Fields.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#crul5_beautiful_glen" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 CRUL5 Beautiful Glen</span>
+  </a>
+<div class="list-group collapse" id="crul5_beautiful_glen">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/CRUL5 Beautiful Glen.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#hurl1_green_glade" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 HURL1 Green Glade</span>
+  </a>
+<div class="list-group collapse" id="hurl1_green_glade">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/HURL1 Green Glade.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#hurl2_faithful_dream" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 HURL2 Faithful Dream</span>
+  </a>
+<div class="list-group collapse" id="hurl2_faithful_dream">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/HURL2 Faithful Dream.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#hurl3_thundering_express" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 HURL3 Thundering Express</span>
+  </a>
+<div class="list-group collapse" id="hurl3_thundering_express">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/HURL3 Thundering Express.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#hurl4_melodic_fields" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 HURL4 Melodic Fields</span>
+  </a>
+<div class="list-group collapse" id="hurl4_melodic_fields">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/HURL4 Melodic Fields.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#hurl5_high_course" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 HURL5 High Course</span>
+  </a>
+<div class="list-group collapse" id="hurl5_high_course">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/HURL5 High Course.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#magnus_gateway" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Magnus Gateway</span>
+  </a>
+<div class="list-group collapse" id="magnus_gateway">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/Magnus Gateway.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#micl1_shallow_frontier" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 MICL1 Shallow Frontier</span>
+  </a>
+<div class="list-group collapse" id="micl1_shallow_frontier">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/MICL1 Shallow Frontier.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#micl2_long_forest" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 MICL2 Long Forest</span>
+  </a>
+<div class="list-group collapse" id="micl2_long_forest">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/MICL2 Long Forest.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#micl3_endless_odyssey" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 MICL3 Endless Odyssey</span>
+  </a>
+<div class="list-group collapse" id="micl3_endless_odyssey">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/MICL3 Endless Odyssey.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#micl4_red_crossroads" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 MICL4 Red Crossroads</span>
+  </a>
+<div class="list-group collapse" id="micl4_red_crossroads">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/MICL4 Red Crossroads.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#micl5_modern_icarus" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 MICL5 Modern Icarus</span>
+  </a>
+<div class="list-group collapse" id="micl5_modern_icarus">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/MICL5 Modern Icarus.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#pyro_gateway" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Pyro Gateway</span>
+  </a>
+<div class="list-group collapse" id="pyro_gateway">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/Pyro Gateway.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+<a href="#terra_gateway" class="list-group-item" data-toggle="collapse">
+ <i class="glyphicon glyphicon-chevron-right"></i><span style="">🏗 Terra Gateway</span>
+  </a>
+<div class="list-group collapse" id="terra_gateway">
+<a href="#" onclick="load('./data/2-Stanton SFD/8-RR Stations/Terra Gateway.jpg');" class="list-group-item chart-item">Spaceport/Facility Directory 📰</a></div>
+</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
