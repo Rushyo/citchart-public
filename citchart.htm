@@ -11,7 +11,7 @@
 		var chartEmbed = document.getElementById("chartembed");
 		if(chartEmbed == null)
 		{
-			chartEmbed = document.createElement("embed");
+			chartEmbed = document.createElement("img");
 			chartEmbed.id = "chartembed";
 			chartEmbed.style.width = "auto";
 			chartEmbed.style.height = "100vh";
@@ -98,18 +98,7 @@
 		<div class="col-sm-6">
 			<small>This list was last updated November 11, 2023. <a href="https://github.com/Rushyo/citchart-public">App by Rushyo</a>. Charts (not included) by <a href="https://www.deltaconsultingsc.com/">Delta Consulting Aviation Products</a>.</small>
 			<div class="list-group list-group-root well">
-				<a href="#favs" class="list-group-item" data-toggle="collapse">
-    <i class="glyphicon glyphicon-chevron-right"></i>Favourites
-  </a>
-<div class="list-group collapse" id="favs">
-<a href="#" onclick="load('./data/2-Stanton%20SFD/6-Microtech/Microtech/Port%20Tressler.jpg');" class="list-group-item">Port Tressler SFD</a>
-<a href="#" onclick="load('./data/2-Stanton%20SFD/6-Microtech/Microtech/New%20Babbage%20P1.jpg');" class="list-group-item">NBIS SFD</a>
-<a href="#" onclick="load('./data/4-Stanton%20Terminal%20Area%20Chart%20Supplement/5-TAC%20New%20Babbage%20P1.jpg');" class="list-group-item">NBIS TAC P1</a>
-<a href="#" onclick="load('./data/4-Stanton%20Terminal%20Area%20Chart%20Supplement/6-TAC%20New%20Babbage%20P2.jpg');" class="list-group-item">NBIS TAC P2</a>
-<a href="#" onclick="load('./data/2-Stanton%20SFD/3-Crusader/Crusader/Orison%20P1.jpg');" class="list-group-item">Orison SFD P1</a>
-<a href="#" onclick="load('./data/5-Stanton%20Instrument%20Approach%20Procedure%20Supplement/IAP%20Crusader_Orison%20QBA%20Z.jpg');" class="list-group-item">Orison QBA Z</a>
-</div>
-<a href="#stanton" class="list-group-item" data-toggle="collapse">
+				<a href="#stanton" class="list-group-item" data-toggle="collapse">
  <i class="glyphicon glyphicon-chevron-right"></i><span style="">☼ Stanton</span>
   </a>
 <div class="list-group collapse" id="stanton">
