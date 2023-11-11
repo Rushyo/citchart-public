@@ -4,7 +4,7 @@ This single HTML page provides a simple interface to quickly access Star Citizen
 
 ![Screenshot showing a New Babbage Interstelalr Spaceport directory chart beside a navigation menu](image1.png "Screenshot")
 
-To use it, simply drop the `citchart.htm` file in a local folder, then create a 'data' folder in the same folder and place [the charts](https://www.deltaconsultingsc.com/aviation-products) from [Delta Consulting Aviation Products](https://www.deltaconsultingsc.com/aviation-products) (in 1-Zip Files) in the following folder structure:
+To use it, simply drop the `citchart.htm` file in a local folder, then create a 'data' folder in the same folder and place [the charts](https://www.deltaconsultingsc.com/aviation-products) from [Delta Consulting Aviation Products](https://www.deltaconsultingsc.com/aviation-products) (in `1-Zip Files`) in the following folder structure:
 
 ```
 ./citchart.htm
